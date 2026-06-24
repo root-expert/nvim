@@ -9,7 +9,11 @@ return {
 		},
 		config = function()
 			local builtin = require("telescope.builtin")
-			require("telescope").setup({})
+			require("telescope").setup({
+				defaults = {
+					file_ignore_patterns = { "%.git/.*" },
+				},
+			})
 			require("telescope").load_extension("fzf")
 
 			vim.keymap.set("n", "<leader>ff", function()

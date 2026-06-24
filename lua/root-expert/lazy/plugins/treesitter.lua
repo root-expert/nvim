@@ -9,6 +9,7 @@ return {
 			ts.install({
 				"lua",
 				"terraform",
+				"hcl",
 				"helm",
 				"yaml",
 				"puppet",

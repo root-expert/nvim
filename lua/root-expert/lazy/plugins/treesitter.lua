@@ -15,6 +15,7 @@ return {
 				"puppet",
 				"bash",
 				"vimdoc",
+				"markdown",
 			})
 		end,
 	},

@@ -17,6 +17,7 @@ return {
 				"vimdoc",
 				"vim",
 				"markdown",
+				"go",
 			})
 		end,
 	},

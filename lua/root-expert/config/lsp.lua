@@ -11,4 +11,5 @@ vim.lsp.enable({
 	"lua_ls",
 	"terraformls",
 	"yamlls",
+	"gopls",
 })

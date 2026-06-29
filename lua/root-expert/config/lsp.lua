@@ -9,6 +9,6 @@ vim.lsp.enable({
 	"gh_actions_ls",
 	"helm_ls",
 	"lua_ls",
-	-- "terraformls",
+	"terraformls",
 	"yamlls",
 })

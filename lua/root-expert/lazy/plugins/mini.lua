@@ -32,7 +32,12 @@ return {
 		"nvim-mini/mini.splitjoin",
 		version = "*",
 		config = function()
-			require("mini.splitjoin").setup()
+			local sj = require("mini.splitjoin")
+			sj.setup({
+				join = {
+					hooks_post = { sj.gen_hook.pad_brackets() },
+				},
+			})
 		end,
 	},
 }

@@ -4,23 +4,27 @@ return {
 		version = "*",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			-- optional but recommended
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		},
+		keys = {
+			{ "<leader>ff", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live [G]rep" } },
+			{ "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope [B]uffers" } },
+			{ "<leader>fr", "<cmd>Telescope lsp_references", { desc = "Telescope [F]ind [R]eferences" } },
 		},
 		config = function()
 			local builtin = require("telescope.builtin")
-			require("telescope").setup({
+			local telescope = require("telescope")
+			telescope.setup({
 				defaults = {
 					file_ignore_patterns = { "%.git/.*" },
 				},
 			})
-			require("telescope").load_extension("fzf")
+			telescope.load_extension("fzf")
+			telescope.load_extension("diff")
 
 			vim.keymap.set("n", "<leader>ff", function()
 				builtin.find_files({ hidden = true })
 			end, { desc = "Telescope [F]ind [F]iles" })
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live [G]rep" })
-			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope [B]uffers" })
 		end,
 	},
 	{
@@ -28,15 +32,9 @@ return {
 		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
 		},
-		config = function()
-			require("telescope").load_extension("diff")
-
-			vim.keymap.set("n", "<leader>dF", function()
-				require("telescope").extensions.diff.diff_files({ hidden = true })
-			end, { desc = "Compare 2 files" })
-			vim.keymap.set("n", "<leader>df", function()
-				require("telescope").extensions.diff.diff_current({ hidden = true })
-			end, { desc = "Compare file with current" })
-		end,
+		keys = {
+			{ "<leader>dF", "<cmd>Telescope diff diff_files<cr>", { desc = "Compare 2 files" } },
+			{ "<leader>df", "<cmd>Telescope diff diff_current<cr>", { desc = "Comare file with current" } },
+		},
 	},
 }

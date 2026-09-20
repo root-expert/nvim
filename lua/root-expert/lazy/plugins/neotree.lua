@@ -10,5 +10,14 @@ return {
 			{ "<leader>tt", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neotree tree" } },
 		},
 		lazy = false, -- neo-tree will lazily load itself
+		---@module 'neo-tree'
+		---@type neotree.Config
+		opts = {
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+				},
+			},
+		},
 	},
 }

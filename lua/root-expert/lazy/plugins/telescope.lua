@@ -7,7 +7,8 @@ return {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 		keys = {
-			{ "<leader>ff", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live [G]rep" } },
+			{ "<leader>ff", "<cmd>Telescope find_files hidden=true", { desc = "Telescope [F]ind [F]iles" } },
+			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live [G]rep" } },
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope [B]uffers" } },
 			{ "<leader>fr", "<cmd>Telescope lsp_references", { desc = "Telescope [F]ind [R]eferences" } },
 		},
@@ -21,10 +22,6 @@ return {
 			})
 			telescope.load_extension("fzf")
 			telescope.load_extension("diff")
-
-			vim.keymap.set("n", "<leader>ff", function()
-				builtin.find_files({ hidden = true })
-			end, { desc = "Telescope [F]ind [F]iles" })
 		end,
 	},
 	{

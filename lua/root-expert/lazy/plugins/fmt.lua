@@ -12,7 +12,6 @@ return {
 					terrafrom = { "tofu_fmt" },
 					yaml = { "yamlfmt" },
 					markdown = { "markdownlint-cli2" },
-					go = { "gofmt" },
 				},
 				format_on_save = function(bufnr)
 					-- Disable with a global or buffer-local variable

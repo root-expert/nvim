@@ -3,6 +3,14 @@ vim.lsp.config("gh_actions_ls", {
 	filetypes = { "yaml.ghactions" },
 })
 
+vim.lsp.config("gopls", {
+	settings = {
+		gopls = {
+			gofumpt = true,
+		},
+	},
+})
+
 vim.lsp.enable({
 	"ansiblels",
 	"bashls",
@@ -14,4 +22,4 @@ vim.lsp.enable({
 	"gopls",
 })
 
-vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true }, })
+vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true } })

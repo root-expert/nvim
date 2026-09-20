@@ -14,9 +14,16 @@ return {
 		---@type neotree.Config
 		opts = {
 			filesystem = {
+				filtered_items = {
+					visible = true,
+					never_show_by_pattern = {
+						".git*",
+					},
+				},
 				follow_current_file = {
 					enabled = true,
 				},
+				group_empty_dirs = true,
 			},
 		},
 	},

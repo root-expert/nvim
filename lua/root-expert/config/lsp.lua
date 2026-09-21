@@ -20,6 +20,7 @@ vim.lsp.enable({
 	"terraformls",
 	"yamlls",
 	"gopls",
+	"vale_ls",
 })
 
 vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true } })

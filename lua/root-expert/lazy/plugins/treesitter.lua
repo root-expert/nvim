@@ -5,10 +5,9 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			local ts = require("nvim-treesitter")
-			ts.setup({})
-			ts.install({
+			local langs = {
 				"lua",
-				"terraform",
+				{ "terraform", { "terraform", "terraform-vars" } },
 				"hcl",
 				"helm",
 				"yaml",
@@ -18,6 +17,30 @@ return {
 				"vim",
 				"markdown",
 				"go",
+			}
+			local parsers = {}
+			local filetypes = {}
+
+			for _, entry in ipairs(langs) do
+				local lang, fts
+				if type(entry) == "table" then
+					lang, fts = entry[1], entry[2]
+				else
+					lang, fts = entry, { entry }
+				end
+
+				table.insert(parsers, lang)
+				for _, ft in ipairs(fts) do
+					table.insert(filetypes, ft)
+				end
+			end
+			ts.install(langs)
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = filetypes,
+				callback = function()
+					vim.treesitter.start()
+				end,
 			})
 		end,
 	},

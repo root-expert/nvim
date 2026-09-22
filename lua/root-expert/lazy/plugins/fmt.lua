@@ -22,11 +22,13 @@ return {
 				lua = { "stylua" },
 				terrafrom = { "tofu_fmt" },
 				yaml = { "yamlfmt" },
-				markdown = { "markdownlint-cli2" },
+				markdown = { "markdownlint-cli2", "vale" },
 			},
 			formatters = {
-				markdown = {
-					args = "--format",
+				vale = {
+					command = "vale",
+					args = { "fix", "--apply", "$FILENAME" },
+					stdin = false,
 				},
 			},
 			format_on_save = function(bufnr)

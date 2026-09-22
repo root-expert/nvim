@@ -11,7 +11,9 @@ local servers = {
 	yamlls = {},
 	gopls = {
 		settings = {
-			gofumpt = true,
+			gopls = {
+				gofumpt = true,
+			},
 		},
 	},
 	vale_ls = {},

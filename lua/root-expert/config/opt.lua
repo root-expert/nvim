@@ -24,6 +24,6 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.autocomplete = true
 vim.opt.complete = "o,.,w,b,u"
-vim.opt.completeopt = "fuzzy,menuone,noselect,popup"
+vim.opt.completeopt = "fuzzy,menu,menuone,noselect,popup"
 vim.opt.pumheight = 10
 vim.opt.pummaxwidth = 100

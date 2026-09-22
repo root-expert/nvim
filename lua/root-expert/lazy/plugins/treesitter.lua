@@ -38,7 +38,7 @@ return {
 					table.insert(filetypes, ft)
 				end
 			end
-			ts.install(langs)
+			ts.install(parsers)
 
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = filetypes,

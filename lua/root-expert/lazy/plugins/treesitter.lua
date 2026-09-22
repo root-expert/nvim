@@ -17,6 +17,10 @@ return {
 				"vim",
 				"markdown",
 				"go",
+				"sql",
+				"rego",
+				"python",
+				"toml",
 			}
 			local parsers = {}
 			local filetypes = {}

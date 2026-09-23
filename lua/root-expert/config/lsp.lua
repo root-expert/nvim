@@ -17,6 +17,7 @@ local servers = {
 		},
 	},
 	vale_ls = {},
+	rumdl = {},
 }
 
 for name, config in pairs(servers) do

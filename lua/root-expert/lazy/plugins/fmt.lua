@@ -22,14 +22,6 @@ return {
 				lua = { "stylua" },
 				terrafrom = { "tofu_fmt" },
 				yaml = { "yamlfmt" },
-				markdown = { "markdownlint-cli2", "vale" },
-			},
-			formatters = {
-				vale = {
-					command = "vale",
-					args = { "fix", "--apply", "$FILENAME" },
-					stdin = false,
-				},
 			},
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable

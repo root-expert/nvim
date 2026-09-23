@@ -17,7 +17,7 @@ return {
 				filtered_items = {
 					visible = true,
 					never_show_by_pattern = {
-						".git*",
+						".git",
 					},
 				},
 				follow_current_file = {

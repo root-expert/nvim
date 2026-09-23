@@ -10,7 +10,7 @@ return {
 			{ "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Telescope [F]ind [F]iles" } },
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live [G]rep" } },
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope [B]uffers" } },
-			{ "<leader>fr", "<cmd>Telescope lsp_references", { desc = "Telescope [F]ind [R]eferences" } },
+			{ "<leader>fr", "<cmd>Telescope lsp_references<cr>", { desc = "Telescope [F]ind [R]eferences" } },
 		},
 		config = function()
 			local builtin = require("telescope.builtin")

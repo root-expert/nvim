@@ -1,3 +1,3 @@
 return {
-	import = "root-expert.lazy.plugins",
+  import = "root-expert.lazy.plugins",
 }

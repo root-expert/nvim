@@ -2,7 +2,7 @@ vim.diagnostic.config({ virtual_text = false, float = { focusable = false, borde
 
 -- Show diagnostic popup automatically on cursor hold
 vim.api.nvim_create_autocmd("CursorHold", {
-	callback = function()
-		vim.diagnostic.open_float(nil, { focus = false })
-	end,
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false })
+  end,
 })
